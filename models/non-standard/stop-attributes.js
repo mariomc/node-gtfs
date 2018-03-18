@@ -10,6 +10,10 @@ const StopAttributes = mongoose.model('StopAttributes', new mongoose.Schema({
     type: String,
     index: true
   },
+  stop: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Stop'
+  },
   stop_city: String
 }));
 

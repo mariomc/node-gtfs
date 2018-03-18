@@ -11,10 +11,18 @@ const Trip = mongoose.model('Trip', new mongoose.Schema({
     required: true,
     index: true
   },
+  route: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Route'
+  },
   service_id: {
     type: String,
     required: true,
     index: true
+  },
+  service: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Calendar'
   },
   trip_id: {
     type: String,
@@ -31,6 +39,10 @@ const Trip = mongoose.model('Trip', new mongoose.Schema({
   },
   block_id: String,
   shape_id: String,
+  shapes: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Shape'
+  }],
   wheelchair_accessible: {
     type: Number,
     min: 0,

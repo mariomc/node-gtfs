@@ -14,6 +14,10 @@ const Timetable = mongoose.model('Timetable', new mongoose.Schema({
     type: String,
     index: true
   },
+  route: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Route'
+  },
   direction_id: {
     type: Number,
     index: true,
@@ -63,6 +67,10 @@ const Timetable = mongoose.model('Timetable', new mongoose.Schema({
   timetable_page_id: {
     type: String,
     index: true
+  },
+  timetable_page: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'TimetablePage'
   },
   timetable_sequence: {
     type: Number,

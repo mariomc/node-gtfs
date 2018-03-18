@@ -10,9 +10,17 @@ const Transfer = mongoose.model('Transfer', new mongoose.Schema({
     type: String,
     required: true
   },
+  from_stop: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Stop'
+  },
   to_stop_id: {
     type: String,
     required: true
+  },
+  to_stop: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Stop'
   },
   transfer_type: {
     type: Number,

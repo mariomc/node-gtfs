@@ -11,6 +11,10 @@ const Frequencies = mongoose.model('Frequencies', new mongoose.Schema({
     required: true,
     index: true
   },
+  trip: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Trip'
+  },
   start_time: {
     type: String,
     required: true

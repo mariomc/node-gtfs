@@ -10,6 +10,10 @@ const CalendarDate = mongoose.model('CalendarDate', new mongoose.Schema({
     type: String,
     required: true
   },
+  service: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Calendar'
+  },
   date: {
     type: Number,
     required: true

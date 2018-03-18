@@ -12,6 +12,10 @@ const Route = mongoose.model('Route', new mongoose.Schema({
     index: true
   },
   agency_id: String,
+  agency: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Agency'
+  },
   route_short_name: {
     type: String,
     required: true

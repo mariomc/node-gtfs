@@ -10,7 +10,15 @@ const FareRule = mongoose.model('FareRule', new mongoose.Schema({
     type: String,
     required: true
   },
+  fare: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'FareAttribute'
+  },
   route_id: String,
+  route: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Route'
+  },
   origin_id: String,
   destination_id: String,
   contains_id: String

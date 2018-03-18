@@ -10,7 +10,15 @@ const TimetableStopOrder = mongoose.model('TimetableStopOrder', new mongoose.Sch
     type: String,
     index: true
   },
+  timetable: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Timetable'
+  },
   stop_id: String,
+  stop: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Stop'
+  },
   stop_sequence: Number
 }));
 

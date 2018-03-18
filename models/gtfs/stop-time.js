@@ -11,6 +11,10 @@ const stopTimeSchema = new mongoose.Schema({
     required: true,
     index: true
   },
+  trip: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Trip'
+  },
   arrival_time: {
     type: String,
     required: true
@@ -22,6 +26,10 @@ const stopTimeSchema = new mongoose.Schema({
   stop_id: {
     type: String,
     required: true
+  },
+  stop: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Stop'
   },
   stop_sequence: {
     type: Number,
